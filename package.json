@@ -5,7 +5,7 @@
     "build": "astro build",
     "preview": "astro preview"
   },
-  "dependencies": {
+  "devDependencies": {
     "astro": "1.0.0-rc.6",
     "@astrojs/tailwind": "^0.2.5"
   }
