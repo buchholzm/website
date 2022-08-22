@@ -19,11 +19,10 @@
     <main class="grow p-4">
       <slot />
     </main>
-    <footer class="shrink-0 h-16 flex items-center justify-center text-gray-500">
-      <div>
-        © 2022 Michael Buchholz –
-        <a class="border-b border-gray-500" href="/impressum">Impressum und Datenschutzerklärung</a>
-      </div>
+    <footer class="shrink-0 h-16 flex flex-col sm:flex-row items-center justify-center text-gray-500">
+      <span>© 2022 Michael Buchholz</span>
+      <span class="hidden sm:block sm:mx-2">-</span>
+      <a class="border-b border-gray-500" href="/impressum">Impressum und Datenschutzerklärung</a>
     </footer>
   </div>
 </body>
