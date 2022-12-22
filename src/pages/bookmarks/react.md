@@ -64,8 +64,8 @@ Es gibt einige kleinere Alternativen - in diesem Bereich dominiert allerdings ob
 
 ### Laden von Remote-Data
 
-- [SWR]()
-- [React Query]()
+- [SWR](https://swr.vercel.app/)
+- [React Query](https://tanstack.com/query/v4)
 
 Wichtiger zusätzlicher Kern-Aspekt beider Bibliotheken ist das Caching der Daten. Dies
 ersetzt oft ein komplexes State-Management der Remote-Daten, das bei selbst gestrickten
@@ -91,6 +91,7 @@ Facebook umsetzen (https://facebook.github.io/flux/).
 
 - [Redux](https://redux.js.org/)
 - [Redux Toolkit - Recommended way to use Redux](https://redux-toolkit.js.org/)
+- oder einfacher [Rematch](https://rematchjs.org/)
 - oder schlanker [Zustand](https://zustand-demo.pmnd.rs/)
 
 #### Aktuelle Lösungen
@@ -114,7 +115,7 @@ eine Kombination von React Router oder SWR sowie Recoil oder Jotai.
 
 - [React - Lernen und Verstehen (React 16.8)](https://lernen.react-js.dev/)
 - [GitHub-Repository zum obigen Buch](https://github.com/manuelbieh/react-lernen)
-
+- [Full Stack Open 2022](https://fullstackopen.com/en/)
 - [How To Code | DigitalOcean](https://www.digitalocean.com/community/books/how-to-code-in-react-js-ebook)
 - [React Rip Tutorial](https://riptutorial.com/ebook/reactjs)
 
