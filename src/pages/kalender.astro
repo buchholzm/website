@@ -1,9 +1,11 @@
 ---
+import { Calendar } from "../components/calendar";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
   <div class="mx-auto max-w-6xl">
     <h2 class="text-3xl font-semibold">Kalender</h2>
+    <Calendar client:idle />
   </div>
 </BaseLayout>
