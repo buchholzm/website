@@ -3,9 +3,14 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-		"build": "astro build"
+    "build": "astro build",
+    "format": "prettier -w --plugin-search-dir=. src"
   },
   "dependencies": {
     "astro": "^2.0.14"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "prettier-plugin-astro": "^0.8.0"
   }
 }
