@@ -1,4 +1,7 @@
 {
   "name": "website",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "astro": "^2.0.14"
+  }
 }
