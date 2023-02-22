@@ -4,6 +4,7 @@ specifiers:
   '@astrojs/react': ^2.0.2
   '@astrojs/tailwind': ^3.0.1
   '@radix-ui/colors': ^0.1.8
+  '@radix-ui/react-icons': ^1.2.0
   '@tailwindcss/typography': ^0.5.9
   '@types/react': ^18.0.21
   '@types/react-dom': ^18.0.6
@@ -18,6 +19,7 @@ dependencies:
   '@astrojs/react': 2.0.2_3xleytyzprlgycb2ded54tx72i
   '@astrojs/tailwind': 3.0.1_hf2kjfio2dr6w52rh4mpociq2u
   '@radix-ui/colors': 0.1.8
+  '@radix-ui/react-icons': 1.2.0_react@18.2.0
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.7
   astro: 2.0.14
   react: 18.2.0
@@ -680,6 +682,14 @@ packages:
 
   /@radix-ui/colors/0.1.8:
     resolution: {integrity: sha512-jwRMXYwC0hUo0mv6wGpuw254Pd9p/R6Td5xsRpOmaWkUHlooNWqVcadgyzlRumMq3xfOTXwJReU0Jv+EIy4Jbw==}
+    dev: false
+
+  /@radix-ui/react-icons/1.2.0_react@18.2.0:
+    resolution: {integrity: sha512-NqrZxn+Ig6c6MypUt84/Nab9WBFXH75T1mhEhFjPlIYaNkp113pqlo6QdK5r7zb3b7RckDAPgUQACes0aKwcFA==}
+    peerDependencies:
+      react: ^16.x || ^17.x || ^18.x
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@tailwindcss/typography/0.5.9_tailwindcss@3.2.7:

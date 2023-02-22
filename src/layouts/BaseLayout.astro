@@ -1,8 +1,9 @@
 ---
+import DarkmodeToggle from '../components/DarkmodeToggle';
 ---
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="h-full">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +17,16 @@
       );
     </script>
   </head>
-  <body class="neutral-app-bg brand-app-text-contrast">
-    <slot />
+  <body class="h-full neutral-app-bg-subtl brand-app-text-contrast">
+    <div class="h-full mx-0 sm:mx-4 md:mx-12 neutral-app-bg">
+      <header class="h-16 flex items-center px-4">
+        <div class="ml-auto">
+          <DarkmodeToggle client:only />
+        </div>
+      </header>
+      <main>
+        <slot />
+      </main>
+    </div>
   </body>
 </html>
