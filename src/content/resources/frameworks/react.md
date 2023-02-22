@@ -1,5 +1,5 @@
 ---
-title: 'React: Links und Resourcen'
+title: React
 ---
 
 ## Official
