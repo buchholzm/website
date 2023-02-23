@@ -1,6 +1,5 @@
 ---
-import DarkmodeToggle from '../components/DarkmodeToggle.astro';
-import TopNavigation from '../components/TopNavigation.astro';
+import BaseHeader from '../components/BaseHeader.astro';
 ---
 
 <!DOCTYPE html>
@@ -18,13 +17,11 @@ import TopNavigation from '../components/TopNavigation.astro';
       );
     </script>
   </head>
-  <body class="h-full neutral-app-bg-subtl brand-app-text-contrast">
-    <div class="h-full mx-0 sm:mx-4 md:mx-12 neutral-app-bg">
-      <header class="h-16 flex items-center px-4">
-        <div class="ml-auto">
-          <DarkmodeToggle />
-        </div>
-      </header>
+  <body
+    class="h-full neutral-app-bg-subtl brand-app-text-contrast px-0 sm:px-4 md:px-12"
+  >
+    <div class="h-full max-w-5xl mx-auto neutral-app-bg">
+      <BaseHeader />
       <main>
         <slot />
       </main>
