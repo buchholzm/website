@@ -1,0 +1,23 @@
+---
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
+---
+
+<button
+  data-darkmode-toggle
+  aria-label="Dunkelmodus ein/aus"
+  class="neutral-cta-int p-2 rounded-full shadow-sm focus:outline-none focus:ring-4 focus:ring-neutral7"
+>
+  <MoonIcon className="hidden dark:inline h-6 w-6" />
+  <SunIcon className="dark:hidden h-6 w-6" />
+</button>
+
+<script>
+  const toggleBtns = document.querySelectorAll('[data-darkmode-toggle]');
+  toggleBtns.forEach((btn) =>
+    btn.addEventListener('click', () => {
+      const wasDark = document.documentElement.classList.contains('dark');
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', wasDark ? 'light' : 'dark');
+    })
+  );
+</script>
