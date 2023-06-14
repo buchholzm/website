@@ -36,6 +36,7 @@ Und optional je nach Wunsch:
     winget install Google.Chrome
     winget install Mozilla.Firefox.DeveloperEdition
     winget install Microsoft.WindowsTerminal
+    winget install Microsoft.PowerShell
 
 ## Detaillierte Installation
 
