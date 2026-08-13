@@ -8,9 +8,9 @@ Diese Setup-Anweisungen beziehen sich auf alle meine JavaScript-Schulungen. Sie 
 für die Themen JavaScript Grundlagen und Fortgeschritten, für alle Webframework-Themen wie
 Angular, React, Svelte und Vue sowie für serverseitiges JavaScript mit Node.js.
 
-## Betriebssystem: Windows 10
+## Betriebssystem: Windows 11
 
-Alternativ kann ich die Schulung problemlos auch mit einem Linux-System durchführen. Falls der Kunde lieber Mac OSX einsetzten möchte, ist das in Ordnung. Ich selbst verfüge allerdings über keinen Mac.
+Alternativ kann ich die Schulung problemlos auch mit einem Linux- oder MacOS-System durchführen.
 
 ## Software
 
@@ -73,6 +73,13 @@ Falls die Schulung unter einem anderen Betriebssystem als MS Windows durchgefüh
 9. Extra-Optionen: Standard übernehmen: die ersten zwei Haken gesetzt (symbolische Links nicht)
 10. Weitere experimentelle Features neuerer Git-Versionen einfach ausgeschaltet lassen
 
+Falls in der Schulung auch Git genutzt werden soll, um zum Beispiel eigene Repositories anzulegen und Commits zu erstellen, muss Git noch konfiguriert werden:
+
+    git config --global user.email "you@example.com"
+    git config --global user.name "Your Name"
+
+Benutzername und Email-Adresse können frei gewählt werden.
+
 ### Browser
 
 Installieren Sie bitte im einfachsten Fall den Google Chrome - oder alternativ den Mozilla Firefox. Der Edge Chromium ist bei einem aktuellen Windows 10 möglicherweise bereits installiert. Natürlich werde ich - falls vom Kunden gewünscht - auf etwaige Besonderheiten bei der Berücksichtigung des IE 11 (Internet Explorer), des MS Edge (alte Legacy-Version) bzw. anderer Not-Ever-Green Browser eingehen.
@@ -82,11 +89,12 @@ Installieren Sie bitte im einfachsten Fall den Google Chrome - oder alternativ d
 Während der Schulung setze ich wiederholt Terminals ein, um Kommandozeilen-Befehle abzusetzen. Es werden aber nur rudimentäre eingebaute Befehle benutzt - hauptsächlich `cd` zum Verzeichniswechsel. Also darf jeder beliebige Shell eingesetzt werden:
 
 - Windows `cmd`
-- Powershell
+- Windows PowerShell (Version <= 5.1)
+- PowerShell Core (oben installiert)
 - Git Bash
 - ...
 
-Beim Einsatz der Powershell ist zu beachten, dass die Ausführungsrechte für Scripte konfiguriert sind:
+Beim Einsatz der Windows Powershell ist zu beachten, dass die Ausführungsrechte für Scripte konfiguriert sind:
 
 ```
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
