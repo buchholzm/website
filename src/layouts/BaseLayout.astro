@@ -7,23 +7,23 @@ import "../styles/global.css";
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>michael-buchholz.com</title>
+  <title>Michael Buchholz — Lean Code</title>
 </head>
 
-<body class="h-full text-gray-700">
+<body class="h-full bg-paper font-sans text-ink">
   <div class="h-full flex flex-col">
     <!-- Desktop Nav -->
-    <nav class="shrink-0 px-4 h-16 flex justify-end items-center gap-4 shadow-lg">
-      <a class="font-medium text-gray-500 hover:text-gray-700" href="/">Home</a>
-      <a class="font-medium text-gray-500 hover:text-gray-700" href="/training/setup/javascript">Schulungs-Setup</a>
+    <nav class="shrink-0 px-4 h-16 flex justify-end items-center gap-4">
+      <a class="font-medium text-muted transition-colors hover:text-ink" href="/">Home</a>
+      <a class="font-medium text-muted transition-colors hover:text-ink" href="/training/setup/javascript">Schulungs-Setup</a>
     </nav>
     <main class="grow p-4">
       <slot />
     </main>
-    <footer class="shrink-0 h-16 flex flex-col sm:flex-row items-center justify-center text-gray-500">
-      <span>© 2022 Michael Buchholz</span>
-      <span class="hidden sm:block sm:mx-2">-</span>
-      <a class="border-b border-gray-500" href="/impressum">Impressum und Datenschutzerklärung</a>
+    <footer class="shrink-0 h-16 flex flex-col sm:flex-row items-center justify-center gap-x-2 border-t border-hairline text-sm text-muted">
+      <span>© 2026 Michael Buchholz</span>
+      <span class="hidden sm:block">·</span>
+      <a class="border-b border-transparent transition-colors hover:border-muted" href="/impressum">Impressum und Datenschutzerklärung</a>
     </footer>
   </div>
 </body>
