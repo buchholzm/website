@@ -1,0 +1,19 @@
+# Styled directory listings for participant downloads on training.michael-buchholz.com.
+# Place at the document root; applies to every course folder (topic-customer-YYMM) below.
+# Requires AllowOverride Indexes FileInfo Options (or All).
+
+Options +Indexes +IncludesNOEXEC
+
+IndexOptions FancyIndexing HTMLTable SuppressHTMLPreamble SuppressIcon SuppressDescription SuppressColumnSorting IgnoreClient FoldersFirst VersionSort NameWidth=* Charset=UTF-8
+IndexOrderDefault Ascending Name
+
+HeaderName /_index/header.shtml
+ReadmeName /_index/footer.shtml
+IndexIgnore _index .??* *~
+
+AddType text/html .shtml
+AddOutputFilter INCLUDES .shtml
+
+# The root is never listed: course folder names contain customer names and are
+# only reachable by direct link. Visitors of the bare domain land on the training page.
+RedirectMatch 302 ^/$ https://michael-buchholz.com/schulungen

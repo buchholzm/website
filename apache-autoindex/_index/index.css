@@ -1,0 +1,217 @@
+/* Directory listing theme — mirrors michael-buchholz.com (src/styles/global.css). */
+
+@font-face { font-family: "Inter"; font-weight: 400; font-display: swap; src: url("fonts/inter-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 500; font-display: swap; src: url("fonts/inter-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Space Grotesk"; font-weight: 500; font-display: swap; src: url("fonts/space-grotesk-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Space Grotesk"; font-weight: 700; font-display: swap; src: url("fonts/space-grotesk-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 400; font-display: swap; src: url("fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2"); }
+
+:root {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --paper: #f3f5f1;
+  --surface: #ffffff;
+  --ink: #14171a;
+  --muted: #5b665f;
+  --hairline: #dee3db;
+  --add: #157347;
+  --add-soft: #e3f0e7;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--add); outline-offset: 2px; border-radius: 2px; }
+
+/* --- Nav ------------------------------------------------------------ */
+
+.nav {
+  flex-shrink: 0;
+  height: 4rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+.nav a {
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color .15s;
+}
+.nav a:hover { color: var(--ink); }
+
+/* --- Header --------------------------------------------------------- */
+
+.main {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+}
+
+.kicker, .path {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: .875rem;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 1rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 6vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -.025em;
+  line-height: 1.1;
+}
+
+.path {
+  margin-top: .5rem;
+  font-size: 1rem;
+  color: var(--add);
+  overflow-wrap: anywhere;
+}
+
+/* --- Listing -------------------------------------------------------- */
+
+.listing {
+  margin-top: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: .5rem;
+  overflow: hidden;
+}
+
+.listing table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9375rem;
+}
+
+/* Apache's separator rows */
+.listing tr:has(hr) { display: none; }
+
+/* Column headers, translated */
+.listing th {
+  padding: .625rem 1rem;
+  font-size: 0;
+  font-weight: 400;
+  text-align: left;
+  border-bottom: 1px solid var(--hairline);
+}
+.listing th::after {
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  color: var(--muted);
+}
+.listing th:nth-child(1)::after { content: "Name"; }
+.listing th:nth-child(2)::after { content: "Geändert"; }
+.listing th:nth-child(3)::after { content: "Größe"; }
+.listing th:nth-child(n+2) { text-align: right; }
+
+.listing td {
+  padding: .625rem 1rem;
+  border-bottom: 1px solid var(--hairline);
+  vertical-align: middle;
+}
+.listing tr:nth-last-child(2) td { border-bottom: 0; }
+
+.listing td:nth-child(n+2) {
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  color: var(--muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.listing tr:has(td):hover { background: var(--add-soft); }
+
+.listing td:first-child a {
+  display: inline-flex;
+  align-items: center;
+  gap: .625rem;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.listing td:first-child a:hover { color: var(--add); }
+
+/* Markers: ↓ for files (download), ▸ for folders */
+.listing td:first-child a::before {
+  content: "↓";
+  flex-shrink: 0;
+  width: 1ch;
+  font-family: var(--font-mono);
+  font-size: .875rem;
+  color: var(--muted);
+  text-align: center;
+}
+.listing td:first-child a:hover::before { color: var(--add); }
+
+.listing td:first-child a[href$="/"] { font-weight: 500; }
+.listing td:first-child a[href$="/"]::before {
+  content: "▸";
+  color: var(--add);
+}
+
+/* Course folder level: the parent would be the (non-browsable) root, so hide it */
+.listing tr:has(a[href="/"]) { display: none; }
+
+/* Parent directory: the only row whose date cell has no align attribute */
+.listing tr:has(> td:nth-child(2):not([align])) a {
+  font-size: 0;
+  font-family: var(--font-mono);
+  color: var(--muted);
+}
+.listing tr:has(> td:nth-child(2):not([align])) a::before {
+  content: "← Übergeordneter Ordner";
+  width: auto;
+  color: inherit;
+  font-size: .8125rem;
+  font-weight: 400;
+}
+.listing tr:has(> td:nth-child(2):not([align])) a:hover { color: var(--add); }
+.listing tr:has(> td:nth-child(2):not([align])) td:nth-child(3) { font-size: 0; }
+
+/* Phones and small tablets: drop the date column */
+@media (max-width: 40rem) {
+  .listing th:nth-child(2),
+  .listing td:nth-child(2) { display: none; }
+}
+
+/* --- Footer --------------------------------------------------------- */
+
+.footer {
+  flex-shrink: 0;
+  min-height: 4rem;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 .5rem;
+  border-top: 1px solid var(--hairline);
+  font-size: .875rem;
+  color: var(--muted);
+}
+.footer a { text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
+.footer a:hover { border-color: var(--muted); }
+@media (max-width: 40rem) { .footer .sep { display: none; } .footer { flex-direction: column; } }

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Downloads — Michael Buchholz</title>
+  <link rel="stylesheet" href="/_index/index.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://michael-buchholz.com/">Home</a>
+    <a href="https://michael-buchholz.com/schulungen">Schulungen</a>
+  </nav>
+  <main class="main">
+    <p class="kicker">// Downloads für Teilnehmende</p>
+    <h1>Downloads</h1>
+    <p class="path"><!--#echo decoding="url" encoding="entity" var="REQUEST_URI" --></p>
+    <div class="listing">

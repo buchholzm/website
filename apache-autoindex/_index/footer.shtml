@@ -1,0 +1,10 @@
+    </div>
+  </main>
+  <footer class="footer">
+    <!--#config timefmt="%Y" -->
+    <span>© <!--#echo var="DATE_LOCAL" --> Michael Buchholz</span>
+    <span class="sep">·</span>
+    <a href="https://michael-buchholz.com/impressum">Impressum und Datenschutzerklärung</a>
+  </footer>
+</body>
+</html>
