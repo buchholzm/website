@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { trainings } from "../data/trainings";
 
 const focus = ["JavaScript", "TypeScript", "Node.js", "React"];
 
@@ -24,19 +25,6 @@ const projects = [
     ],
   },
   {
-    name: "Linux-Schulungsunterlagen",
-    kicker: "gh/lean-stack/linux-docs",
-    description:
-      "Dokumentation für meine Linux-Schulungen, gebaut mit Astro Starlight.",
-    links: [
-      { label: "Website ansehen", url: "https://linux.lean-stack.rocks/" },
-      {
-        label: "Code ansehen",
-        url: "https://github.com/lean-stack/linux-docs",
-      },
-    ],
-  },
-  {
     name: "runde.tips",
     kicker: "gh/haus23/tipprunde",
     description:
@@ -57,7 +45,7 @@ const projects = [
   <div class="mx-auto max-w-3xl">
     <section class="pt-10 pb-16 sm:pt-16 sm:pb-20">
       <p class="font-mono text-sm text-muted">
-        // Softwareentwickler & Trainer · Cottbus
+        // Softwareentwickler & Trainer · Cottbus · seit 1999
       </p>
 
       <h1
@@ -109,6 +97,12 @@ const projects = [
         >
           Projekt besprechen
         </a>
+        <a
+          href="mailto:mail@michael-buchholz.com?subject=Schulungsanfrage"
+          class="rounded-md border border-ink px-5 py-2.5 font-medium text-ink transition-colors hover:border-add hover:text-add focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-add"
+        >
+          Schulung anfragen
+        </a>
         <ul class="flex flex-wrap gap-2 font-mono text-xs text-muted">
           {
             focus.map((item) => (
@@ -117,6 +111,27 @@ const projects = [
           }
         </ul>
       </div>
+    </section>
+
+    <section class="border-t border-hairline py-12">
+      <h2 class="font-display text-xl font-semibold text-ink">Schulungen</h2>
+      <p class="mt-3 max-w-xl text-base leading-relaxed text-ink/80">
+        Seit 1999 schule ich Entwickler- und Admin-Teams — inhouse vor Ort,
+        remote oder über Schulungsanbieter.
+      </p>
+      <ul class="mt-4 flex flex-wrap gap-2 font-mono text-xs text-muted">
+        {
+          trainings.map((t) => (
+            <li class="rounded border border-hairline px-2 py-1">{t.name}</li>
+          ))
+        }
+      </ul>
+      <a
+        href="/schulungen"
+        class="mt-5 inline-block font-mono text-sm text-add underline-offset-2 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-add"
+      >
+        Alle Schulungen &amp; Unterlagen →
+      </a>
     </section>
 
     <section class="border-t border-hairline py-12">

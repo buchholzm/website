@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { trainings, legacyTopics, clients } from "../data/trainings";
+
+const link =
+  "text-add underline-offset-2 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-add";
+---
+
+<BaseLayout title="Schulungen — Michael Buchholz">
+  <div class="mx-auto max-w-3xl">
+    <section class="pt-10 pb-12 sm:pt-16">
+      <p class="font-mono text-sm text-muted">// Trainer · seit 1999</p>
+      <h1
+        class="mt-4 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl"
+      >
+        Schulungen
+      </h1>
+      <p class="mt-6 max-w-xl text-base leading-relaxed text-ink/80">
+        Seit 1999 schule ich Entwickler- und Admin-Teams — praxisnah, mit
+        eigenen Unterlagen und echtem Code statt Folienschlachten.
+      </p>
+      <p class="mt-3 font-mono text-sm text-muted">
+        // inhouse vor Ort · remote · über Schulungsanbieter
+      </p>
+      <a
+        href="mailto:mail@michael-buchholz.com?subject=Schulungsanfrage"
+        class="mt-8 inline-block rounded-md bg-ink px-5 py-2.5 font-medium text-white transition-colors hover:bg-add focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-add"
+      >
+        Schulung anfragen
+      </a>
+    </section>
+
+    <section class="border-t border-hairline py-12">
+      <h2 class="font-display text-xl font-semibold text-ink">Themen</h2>
+      <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+        {
+          trainings.map((t) => (
+            <li class="rounded-lg border border-hairline bg-surface p-4 transition-colors has-[a:hover]:border-add has-[a:focus-visible]:border-add">
+              <h3 class="font-display text-base font-semibold text-ink">
+                {t.name}
+              </h3>
+              <p class="mt-1 text-sm leading-relaxed text-ink/70">
+                {t.description}
+              </p>
+              {(t.materials || t.setup) && (
+                <div class="mt-2 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs">
+                  {t.materials && (
+                    <a
+                      href={t.materials}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class={link}
+                    >
+                      Unterlagen ↗
+                    </a>
+                  )}
+                  {t.setup && (
+                    <a href={t.setup} class={link}>
+                      Setup →
+                    </a>
+                  )}
+                </div>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+      <p class="mt-4 text-sm leading-relaxed text-muted">
+        Auf Anfrage weiterhin: {legacyTopics.join(", ")}.
+      </p>
+    </section>
+
+    <section class="border-t border-hairline py-12">
+      <div class="rounded-lg border border-add bg-add-soft p-5">
+        <p class="font-mono text-xs text-add">// für Teilnehmende</p>
+        <h2 class="mt-1 font-display text-lg font-semibold text-ink">
+          Schulungs-Setup
+        </h2>
+        <p class="mt-2 text-sm leading-relaxed text-ink/70">
+          Welche Software vor einer JavaScript-, TypeScript-, Node.js- oder
+          Framework-Schulung installiert sein sollte.
+        </p>
+        <a
+          href="/training/setup/javascript"
+          class={`mt-3 inline-block font-mono text-sm ${link}`}
+        >
+          Setup-Anleitung öffnen →
+        </a>
+      </div>
+    </section>
+
+    <section class="border-t border-hairline py-12">
+      <h2 class="font-display text-xl font-semibold text-ink">
+        Bisherige Kunden
+      </h2>
+      <p class="mt-1 font-mono text-xs text-muted">// Auswahl seit 1999</p>
+      <p class="mt-4 text-sm leading-relaxed text-ink/70">
+        {clients.join(" · ")}
+      </p>
+      <p class="mt-8 text-sm leading-relaxed text-muted">
+        Alle Unterlagen entstehen selbst als kleine Web-Projekte mit Astro
+        Starlight — Code ansehen auf{" "}
+        <a
+          href="https://github.com/lean-stack"
+          target="_blank"
+          rel="noopener noreferrer"
+          class={link}
+        >
+          GitHub ↗
+        </a>
+      </p>
+    </section>
+  </div>
+</BaseLayout>

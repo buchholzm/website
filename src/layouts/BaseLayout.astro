@@ -1,5 +1,18 @@
 ---
 import "../styles/global.css";
+
+const { title = "Michael Buchholz — Lean Code" } = Astro.props;
+
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const nav = [
+  { label: "Home", href: "/", active: path === "/" },
+  {
+    label: "Schulungen",
+    href: "/schulungen",
+    // The setup pages belong to the training area.
+    active: path === "/schulungen" || path.startsWith("/training"),
+  },
+];
 ---
 
 <html lang="de" class="h-full">
@@ -7,15 +20,28 @@ import "../styles/global.css";
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Michael Buchholz — Lean Code</title>
+  <title>{title}</title>
 </head>
 
 <body class="h-full bg-paper font-sans text-ink">
   <div class="h-full flex flex-col">
-    <!-- Desktop Nav -->
     <nav class="shrink-0 px-4 h-16 flex justify-end items-center gap-4">
-      <a class="font-medium text-muted transition-colors hover:text-ink" href="/">Home</a>
-      <a class="font-medium text-muted transition-colors hover:text-ink" href="/training/setup/javascript">Schulungs-Setup</a>
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            aria-current={item.active ? "page" : undefined}
+            class:list={[
+              "border-b-2 font-medium transition-colors hover:text-ink",
+              item.active
+                ? "border-add text-ink"
+                : "border-transparent text-muted",
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
     </nav>
     <main class="grow p-4">
       <slot />
